@@ -122,4 +122,17 @@ public class NumberCheckUtillity : MonoBehaviour
         }
     }
 
+    private float lastValue;
+
+    void Update()
+    {
+        if (reference == null) return;
+
+        if (Mathf.Abs(reference.value - lastValue) > 0.001f)
+        {
+            lastValue = reference.value;
+            CheckPeer();
+        }
+    }
+
 }
