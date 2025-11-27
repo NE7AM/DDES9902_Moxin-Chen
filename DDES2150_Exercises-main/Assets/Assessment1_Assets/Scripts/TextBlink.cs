@@ -1,11 +1,9 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class TextBlink : MonoBehaviour
 {
-    [Header("Text to Blink")]
     public TextMeshPro textObject;
-    [Header("Blink Speed")]
     public float blinkSpeed = 2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,8 +16,9 @@ public class TextBlink : MonoBehaviour
     void Update()
     {
         if (textObject == null) return;
+
         Color c = textObject.color;
-        c.a = Mathf.PingPong(Time.time * blinkSpeed, 1f); // 0-1Ñ­»·
+        c.a = Mathf.PingPong(Time.time * blinkSpeed, 1f);
         textObject.color = c;
     }
 }
