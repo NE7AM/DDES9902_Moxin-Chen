@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 31fc91e4a13897d4fbc6f6718fe4f71e, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5916d8799a53d9348adfb147d58c46ef, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -12954,9 +12954,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkyboxSwitcher
   skyboxes:
-  - {fileID: 2100000, guid: 7dfd718ba6af48d4d856bb27efdafa4c, type: 2}
-  - {fileID: 2100000, guid: 230ef7b8ebe043e4c9f6d214148bdc15, type: 2}
-  - {fileID: 2100000, guid: dcade9eb2127d3a41ac9ceb9bfe98182, type: 2}
+  - {fileID: 2100000, guid: d0af2a06189c21641ac1f7fe0932a62d, type: 2}
+  - {fileID: 2100000, guid: 31fc91e4a13897d4fbc6f6718fe4f71e, type: 2}
+  - {fileID: 2100000, guid: b95c5dd0a25d9ac469591ca38696a318, type: 2}
 --- !u!1001 &1334416922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15626,6 +15626,7 @@ GameObject:
   - component: {fileID: 1536081352}
   - component: {fileID: 1536081351}
   - component: {fileID: 1536081350}
+  - component: {fileID: 1536081354}
   m_Layer: 0
   m_Name: Skybox Trigger (2)
   m_TagString: Untagged
@@ -15642,8 +15643,8 @@ Transform:
   m_GameObject: {fileID: 1536081348}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.85, y: 1, z: 5.71}
-  m_LocalScale: {x: 0.29276094, y: 0.29276094, z: 0.29276094}
+  m_LocalPosition: {x: -6.853, y: 0.8, z: 5.71}
+  m_LocalScale: {x: 0.3356105, y: 0.3356105, z: 0.3356105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152975392}
@@ -15678,6 +15679,18 @@ MonoBehaviour:
       - m_Target: {fileID: 949639936}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1536081354}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15788,6 +15801,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536081348}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1536081354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536081348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e97fc838e96f843a933ae629bd9718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreathingPulse
+  speed: 4
+  scaleAmount: 0.3
+  isActive: 0
 --- !u!1 &1542256433
 GameObject:
   m_ObjectHideFlags: 0
@@ -17722,6 +17750,7 @@ GameObject:
   - component: {fileID: 1726229995}
   - component: {fileID: 1726229994}
   - component: {fileID: 1726229993}
+  - component: {fileID: 1726229997}
   m_Layer: 0
   m_Name: Skybox Trigger (1)
   m_TagString: Untagged
@@ -17738,8 +17767,8 @@ Transform:
   m_GameObject: {fileID: 1726229991}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.85, y: 1.9, z: 5.71}
-  m_LocalScale: {x: 0.29276094, y: 0.29276094, z: 0.29276094}
+  m_LocalPosition: {x: -6.853, y: 1.6, z: 5.71}
+  m_LocalScale: {x: 0.3356105, y: 0.3356105, z: 0.3356105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152975392}
@@ -17766,7 +17795,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17774,6 +17803,18 @@ MonoBehaviour:
       - m_Target: {fileID: 949639936}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1726229997}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17884,6 +17925,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726229991}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1726229997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726229991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e97fc838e96f843a933ae629bd9718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreathingPulse
+  speed: 4
+  scaleAmount: 0.3
+  isActive: 0
 --- !u!1 &1728634888
 GameObject:
   m_ObjectHideFlags: 0
@@ -20347,6 +20403,7 @@ GameObject:
   - component: {fileID: 1970935322}
   - component: {fileID: 1970935321}
   - component: {fileID: 1970935320}
+  - component: {fileID: 1970935324}
   m_Layer: 0
   m_Name: Skybox Trigger
   m_TagString: Untagged
@@ -20363,8 +20420,8 @@ Transform:
   m_GameObject: {fileID: 1970935318}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.85, y: 2.8, z: 5.71}
-  m_LocalScale: {x: 0.29276094, y: 0.29276094, z: 0.29276094}
+  m_LocalPosition: {x: -6.853, y: 2.4, z: 5.71}
+  m_LocalScale: {x: 0.3356105, y: 0.3356105, z: 0.3356105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 152975392}
@@ -20391,7 +20448,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20399,6 +20456,18 @@ MonoBehaviour:
       - m_Target: {fileID: 949639936}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1970935324}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20509,6 +20578,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970935318}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1970935324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970935318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e97fc838e96f843a933ae629bd9718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreathingPulse
+  speed: 4
+  scaleAmount: 0.3
+  isActive: 0
 --- !u!1001 &1977027421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21769,34 +21853,34 @@ MonoBehaviour:
           m_StringArgument: Spin 0
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1970935318}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1536081354}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StartPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 0
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1726229991}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1970935324}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 0
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1536081348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1726229997}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22339,34 +22423,34 @@ MonoBehaviour:
           m_StringArgument: Spin 3
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1970935318}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1726229997}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StartPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 3
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1536081348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1970935324}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 3
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1726229991}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1536081354}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24150,10 +24234,10 @@ MonoBehaviour:
           m_StringArgument: Spin 7
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1970935318}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1726229997}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StartPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24162,10 +24246,10 @@ MonoBehaviour:
           m_StringArgument: Spin 7
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1536081348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1970935324}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24174,17 +24258,17 @@ MonoBehaviour:
           m_StringArgument: Spin 7
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1726229991}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1536081354}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 7
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   onTriggerExit:
     m_PersistentCalls:
@@ -24935,10 +25019,10 @@ MonoBehaviour:
           m_StringArgument: Spin 4
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1970935318}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1536081354}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StartPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24947,10 +25031,10 @@ MonoBehaviour:
           m_StringArgument: Spin 4
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1726229991}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1970935324}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24959,17 +25043,17 @@ MonoBehaviour:
           m_StringArgument: Spin 4
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1536081348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1726229997}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 4
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   onTriggerExit:
     m_PersistentCalls:
@@ -25680,34 +25764,34 @@ MonoBehaviour:
           m_StringArgument: Spin 1
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1726229991}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1970935324}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StartPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 1
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1536081348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1726229997}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 1
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1970935318}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1536081354}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26065,10 +26149,10 @@ MonoBehaviour:
           m_StringArgument: Spin 5
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1726229991}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1970935324}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StartPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26077,10 +26161,10 @@ MonoBehaviour:
           m_StringArgument: Spin 5
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1536081348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1726229997}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26089,17 +26173,17 @@ MonoBehaviour:
           m_StringArgument: Spin 5
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1970935318}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1536081354}
+        m_TargetAssemblyTypeName: BreathingPulse, Assembly-CSharp
+        m_MethodName: StopPulsing
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin 5
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   onTriggerExit:
     m_PersistentCalls:
